@@ -1,0 +1,16 @@
+<!--/* byline.html */-->
+<div data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html">
+</div>
+<sly data-sly-call="${placeholderTemplate.placeholder @ isEmpty=true}"></sly>
+
+
+<div data-sly-use.byline="com.adobe.aem.guides.wknd.core.models.Byline"
+     data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html"
+     data-sly-test.hasContent="${!byline.empty}"
+     class="cmp-latestNews">
+    <div class="cmp-latestNews__image"
+         data-sly-resource="${ '.' @ resourceType = 'core/wcm/components/image/v2/image' }">
+    </div>
+
+</div>
+<sly data-sly-call="${placeholderTemplate.placeholder @ isEmpty=!hasContent}"></sly>
